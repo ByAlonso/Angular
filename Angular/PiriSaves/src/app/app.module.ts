@@ -16,6 +16,7 @@ import {UserService} from "./services/user.service";
 import {AlertService} from "./services/alert.service";
 import {AuthenticationService} from "./services/authentication.service";
 import { AlertComponent } from './alert/alert.component';
+import {PostService} from "./services/post.service";
 
 
 @NgModule({
@@ -38,7 +39,7 @@ import { AlertComponent } from './alert/alert.component';
     HttpClientModule,
     ReactiveFormsModule,
   ],
-  providers: [UserService,AlertService,AuthenticationService],
+  providers: [UserService,AlertService,AuthenticationService,PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
