@@ -14,6 +14,12 @@ class PostsDao
 {
     private $dbConnection;
 
+    public function getAll()
+    {
+        $sql = "SELECT * FROM Posts ORDER BY ID DESC";
+        return $this->dbConnection->fetchAll($sql);
+    }
+
     public function __construct(ProjectDao $dbConnection)
     {
         $this->dbConnection = $dbConnection;
@@ -29,7 +35,7 @@ class PostsDao
     {
         $sql = "INSERT INTO Posts (username, title, description, class) VALUES (?, ?, ?, ?)";
         $id = $this->dbConnection->insert($sql, array($post['username'], $post['title'], $post['description'],
-            $post['class']));
+            $post['classe']));
         return $id;
         //falta añadir las fotos de los posts
     }

@@ -23,6 +23,12 @@ class PostsController
         $this->dao = new PostsDao($dbConnection);
     }
 
+    function getAll(Request $request, Response $response, array $args)
+    {
+        $posts = $this->dao->getAll();
+        return $response->withJson($posts);
+    }
+
     function createPost(Request $request, Response $response, array $args)
     {
         $body = $request->getParsedBody();

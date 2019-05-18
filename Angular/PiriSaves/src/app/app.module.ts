@@ -17,6 +17,7 @@ import {AlertService} from "./services/alert.service";
 import {AuthenticationService} from "./services/authentication.service";
 import { AlertComponent } from './alert/alert.component';
 import {PostService} from "./services/post.service";
+import { GeneralComponent } from './feedDisplay/general/general.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import {PostService} from "./services/post.service";
     ProfileComponent,
     FeedComponent,
     AlertComponent,
+    GeneralComponent,
   ],
   imports: [
     BrowserModule,

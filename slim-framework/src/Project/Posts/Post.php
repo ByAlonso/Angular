@@ -16,16 +16,16 @@ class Post
     public $title;
     public $description;
     public $images;
-    public $class;
+    public $classe;
 
-    public function __construct($id,$username, $title, $description,$images,$class)
+    public function __construct($id,$username, $title, $description,$images,$classe)
     {
         $this->id = $id;
         $this->username = $username;
         $this->title = $title;
         $this->description = $description;
         $this->images = $images;
-        $this->class = $class;
+        $this->classe = $classe;
 
     }
 }

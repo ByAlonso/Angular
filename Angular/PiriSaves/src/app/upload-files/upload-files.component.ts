@@ -35,12 +35,7 @@ export class UploadFilesComponent implements OnInit {
 				this.router.navigate(['/']);
 			});
 
-		this.postForm = this.formBuilder.group({
-			username: this.currentUser.username,
-			title: ['',Validators.required],
-			description : ['', Validators.required]
-			//classe: new FormControl()
-		});
+
 
 		this.sub = this.activatedRoute.paramMap.subscribe(params => {
 			this.username = params['params']['username'];
@@ -57,21 +52,33 @@ export class UploadFilesComponent implements OnInit {
 		else if(this.username != this.currentUser.username)
 		{
 			this.router.navigate(['/uploadFiles/' + this.currentUser.username]);
-
 		}
-
+		else if(this.username == this.currentUser.username)
+		{
+			this.postForm = this.formBuilder.group({
+				username: this.currentUser.username,
+				title: ['',Validators.required],
+				description : ['', Validators.required],
+				classe: new FormControl()
+			});
+		}
   }
 
   onSubmit()
 	{
-		this.postService.createPost(this.postForm.value).pipe(first()).subscribe(
+		if (this.postForm.invalid) {
+			return;
+		}
+
+		 this.postService.createPost(this.postForm.value).pipe(first()).subscribe(
 			next =>{
 				this.alertService.success('Post subido correctamente', true);
+				location.reload();
 			},
 			error =>{
 				console.log("MAL");
 			}
-		)
+		);
 	}
 
 }

@@ -7,7 +7,7 @@ use Slim\Http\Response;
 
 $authentication = $app->getContainer()->get('authentication');
 
-$app->get('/users', UsersController::class . ':getAll');
+$app->get('/', PostsController::class . ':getAll');
 
 $app->get('/profile/{username}', UsersController::class . ':getUserByUsername');
 

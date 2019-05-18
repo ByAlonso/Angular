@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {PostService} from "../services/post.service";
+import {Post} from "../post.model";
+import {first} from "rxjs/internal/operators/first";
 
 @Component({
   selector: 'app-feed',
@@ -7,11 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeedComponent implements OnInit {
 
-  constructor() {
+	private post: Post[];
+
+	@Input()
+	title:String;
+	@Input()
+	username:String;
+	@Input()
+	description:String;
+
+  constructor(private postService: PostService) {
   }
 
   ngOnInit() {
-
-	}
-
+		this.postService.getAll().pipe(first()).subscribe(
+			next =>{
+						this.post = next;
+						console.log(this.post);
+			},
+			error =>{
+				console.log("MAL");
+			}
+		)
+	};
 }
