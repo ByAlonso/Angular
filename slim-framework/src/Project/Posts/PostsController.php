@@ -26,8 +26,8 @@ class PostsController
     function createPost(Request $request, Response $response, array $args)
     {
         $body = $request->getParsedBody();
-        $user = $this->dao->createPost($body);
-        return $response->withJson($user);
+        $post = $this->dao->createPost($body);
+        return $response->withJson($post);
     }
 
 }

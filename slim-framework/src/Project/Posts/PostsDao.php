@@ -8,6 +8,7 @@
 
 namespace Project\Posts;
 use Project\Utils\ProjectDao;
+use Firebase\JWT\JWT;
 
 class PostsDao
 {

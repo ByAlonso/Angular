@@ -6,28 +6,27 @@
 
 	<form [formGroup]="postForm" (ngSubmit)="onSubmit()">
 
-		<input type="file" multiple>
-		<p>Introduce las fotos que desees subir</p>
+		<!--<input type="file" multiple>
+		<p>Introduce las fotos que desees subir</p>-->
 
 		<div class="form-group">
 			<label for="exampleFormControlTextarea1">Titulo</label>
-			<textarea formControlName="title" class="form-control" id="exampleFormControlTextarea2" rows="1"></textarea>
+			<textarea formControlName="title" class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
 		</div>
 
-	 <div>
-			<select required formControlName="classe" class="custom-select custom-select-lg mb-3" >
-				<option selected>Clase</option>
-				<option>Mamiferos</option>
+	 <!--<div>
+			<select required formControlName="classe" class=" form-control custom-select custom-select-lg mb-3">
+				<option selected >Mamiferos</option>
 				<option>Peces</option>
 				<option>Anfibios</option>
 				<option>Reptiles</option>
 				<option>Aves</option>
 			</select>
-	 </div>
+	 </div>-->
 
 		<div class="form-group">
-			<label for="exampleFormControlTextarea1">Descripcion</label>
-			<textarea formControlName="description" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+			<label for="exampleFormControlTextarea2">Descripcion</label>
+			<textarea formControlName="description" class="form-control" id="exampleFormControlTextarea2" rows="3"></textarea>
 		</div>
 		<button type="submit">Upload</button>
 	</form>
