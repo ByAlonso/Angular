@@ -1,0 +1,106 @@
+
+
+	<app-header></app-header>
+	<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-12">
+				<div class="card">
+					<div class="card-body">
+						<div class="card-title mb-4">
+							<div class="d-flex justify-content-start">
+								<div class="image-container">
+									<img src="http://placehold.it/150x150" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
+
+									<div *ngIf="edit == true" class="middle">
+										<!--<input type="button" class="btn btn-secondary" id="btnChangePicture" value="Change" />-->
+										<input type="file" id="profilePicture" formControlName="image" class="form-control" name="file" />
+									</div>
+
+								</div>
+								<div class="userData ml-3" *ngIf="actualUser != undefined">
+									<h2 class="d-block" style="font-size: 1.5rem; font-weight: bold; font-family: 'Roboto', sans-serif;" ><a>{{actualUser.username}}</a></h2>
+									<p *ngIf="actualUser.description != null && edit == false">{{actualUser.description}}</p>
+									<div *ngIf="actualUser.description != null && edit == true">
+										<input type="text" formControlName="description" class="form-control" value="{{actualUser.description}}"/>
+									</div>
+								</div>
+
+
+								<div class="ml-auto">
+									<!--ESTO SOLO SI LOS PERFILES COINCIDEN-->
+									<div *ngIf="edit == false && actualUser != undefined && currentUser != undefined && actualUser.username==currentUser.username">
+										<button class="coolButtons" routerLink='/uploadFiles/{{currentUser.username}}'>Subir post</button>
+										<button class="coolButtons" (click)="activarEdit()" id = "editarPerfil">Editar perfil</button>
+									</div>
+									<!--ESTO SOLO SI LOS PERFILES COINCIDEN-->
+
+									<!--ESTO CUANDO PULSEMOS EDITAR PERFIL APARECE-->
+
+									<div *ngIf="edit == true ">
+
+
+
+										<input class="coolButtons" type="submit" style="background: green" value="Guardar"/>
+
+
+
+
+										<button class="coolButtons" (click)="desactivarEdit()">Cancelar</button>
+									</div>
+
+									<!--ESTO CUANDO PULSEMOS EDITAR PERFIL APARECE-->
+								</div>
+
+
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-12">
+								<ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+									<li class="nav-item">
+										<a class="nav-link active" id="basicInfo-tab" data-toggle="tab" href="#basicInfo" role="tab" aria-controls="basicInfo" aria-selected="true">Información</a>
+									</li>
+								</ul>
+								<div class="tab-content ml-1" id="myTabContent">
+									<div class="tab-pane fade show active" id="basicInfo" role="tabpanel" aria-labelledby="basicInfo-tab">
+
+										<div class="row">
+											<div class="col-sm-3 col-md-2 col-5">
+												<label style="font-weight:bold;">Nombre completo</label>
+											</div>
+											<div *ngIf=" actualUser != undefined && actualUser.name != null && edit==false" class="col-md-8 col-6">
+												{{actualUser.name}}
+											</div>
+
+
+
+											<div *ngIf=" actualUser != undefined && actualUser.name != null && edit==true" class="col-md-8 col-7">
+												<input formControlName="name" class="form-control" type ="text" value="{{actualUser.name}}"/>
+											</div>
+
+
+
+
+										</div>
+										<hr />
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	</form>
+	<!-- AQUI TIENEN QUE IR TODOS LOS POSTS-->
+	<app-feed></app-feed>
+
+	<app-footer></app-footer>
+
+
+

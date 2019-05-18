@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+<app-alert></app-alert>
+<!-- main -->
+<div class="main-w3layouts wrapper">
+  <h1>PiriSaves</h1>
+  <h3>El mejor blog de animales de toda la historia</h3>
+  <div class="main-agileinfo">
+    <div class="agileits-top">
+
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+					<input type="text" formControlName="username" class="form-control" placeholder="Username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+					<div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+						<div *ngIf="f.username.errors.required">Username is required</div>
+					</div>
+
+					<input type="password" formControlName="password" class="form-control" placeholder="Password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+					<div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+						<div *ngIf="f.password.errors.required">Password is required</div>
+					</div>
+
+        <input type="submit" value="LOGIN">
+
+      </form>
+
+      <p>Don't have an Account? <a [routerLink]="['/register']"> Register</a></p>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- //main -->
+</body>
+</html>
+
+<app-footer></app-footer>

@@ -1,0 +1,51 @@
+
+.navbar {
+  background: #76b852;
+  position: sticky;
+}
+
+.navbar-brand img {
+  height: 50px;
+  width: 50px;
+}
+
+.navbar-nav a {
+  font-size: 2em;
+  text-align: center;
+  color: #fff;
+  font-weight: 100;
+  text-transform: capitalize;
+  letter-spacing: 4px;
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+}
+
+.navbar-nav a:hover {
+  color: black;
+}
+
+.navbar-nav>.nav-item>.dropdown-menu>a {
+  color: black;
+}
+
+.navbar-nav>.nav-item>.dropdown-menu>a:hover {
+  color: white;
+  background: #76b852;
+}
+
+.container>.row img {
+  height: 100px;
+  width: 100px;
+}
+
+.container>.row>.cabecera {
+  display: flex;
+}
+
+.container>.row>.cabecera>.text-header>a.user {
+  color: black;
+}
+.navbar>.col>a>img {
+  height: 40px;
+  width: 50px;
+}

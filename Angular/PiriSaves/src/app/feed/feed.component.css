@@ -1,0 +1,51 @@
+.navbar {
+  background-color: yellowgreen;
+}
+
+.navbar-brand img {
+  height: 50px;
+  width: 50px;
+}
+
+.navbar-nav a {
+  color: white;
+  font-family: monospace;
+  font-size: 35px;
+}
+
+.navbar-nav a:hover {
+  color: grey;
+}
+
+.navbar-nav>.nav-item>.dropdown-menu>a {
+  color: black;
+}
+
+.navbar-nav>.nav-item>.dropdown-menu>a:hover {
+  color: grey;
+  background-color: yellowgreen;
+}
+
+.container {
+  padding-top: 20px;
+}
+
+.container>.row img {
+  height: 50px;
+  width: 50px;
+}
+
+.container>.row>.cabecera {
+  display: flex;
+}
+
+.container>.row>.cabecera>.text-header>a.user {
+  color: grey;
+}
+.navbar>.col>a>img{
+  height: 40px;
+  width:50px;
+}
+hr{
+  width: 80%;
+}

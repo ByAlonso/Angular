@@ -1,0 +1,37 @@
+
+<body>
+<!-- main -->
+<div class="main-w3layouts wrapper">
+  <h1>PiriSaves</h1>
+  <h3>El mejor blog de animales de toda la historia</h3>
+  <div class="main-agileinfo">
+    <div class="agileits-top">
+      <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+				<input type="text" formControlName="username"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" placeholder="Username">
+				<div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+					<div *ngIf="f.username.errors.required">Username is required</div>
+				</div>
+
+				<input type="email" formControlName="mail" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" placeholder="Email">
+				<div *ngIf="submitted && f.mail.errors" class="invalid-feedback">
+					<div *ngIf="f.mail.errors.required">Mail is required</div>
+				</div>
+				<input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" placeholder="Password" />
+				<div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+					<div *ngIf="f.password.errors.required">Password is required</div>
+					<div *ngIf="f.password.errors.minlength">Password must be at least 3 characters</div>
+				</div>
+				<input type="submit" value="SIGN UP">
+      </form>
+      <p>Have an Account? <a [routerLink]="['/login']"> Login</a></p>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- //main -->
+</body>
+
+<app-footer></app-footer>
