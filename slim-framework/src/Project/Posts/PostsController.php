@@ -29,6 +29,12 @@ class PostsController
         return $response->withJson($posts);
     }
 
+    function getByClass(Request $request, Response $response, array $args)
+    {
+        $posts = $this->dao->getByClass($args['classe']);
+        return $response->withJson($posts);
+    }
+
     function createPost(Request $request, Response $response, array $args)
     {
         $body = $request->getParsedBody();

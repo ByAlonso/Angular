@@ -14,12 +14,13 @@ export class PostService {
 		return this.http.get<Post[]>(`http://localhost:80/`);
 	}
 
-	getById(id: number) {
-		return this.http.get(`/` + id);
+	getByClass(classe: String) {
+		return this.http.get<Post[]>(`http://localhost:80/` + classe);
 	}
+
 	getByUsername(username:String)
 	{
-		return this.http.get<User>('http://localhost:80/profile/' + username);
+		return this.http.get<Post[]>('http://localhost:80/profile/' + username);
 	}
 
 	createPost(poste: Post) {

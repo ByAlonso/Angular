@@ -18,6 +18,8 @@ import {AuthenticationService} from "./services/authentication.service";
 import { AlertComponent } from './alert/alert.component';
 import {PostService} from "./services/post.service";
 import { GeneralComponent } from './feedDisplay/general/general.component';
+import { ClassComponent } from './feedDisplay/class/class.component';
+import { ProfileFeedComponent } from './feedDisplay/profile-feed/profile-feed.component';
 
 
 @NgModule({
@@ -33,6 +35,8 @@ import { GeneralComponent } from './feedDisplay/general/general.component';
     FeedComponent,
     AlertComponent,
     GeneralComponent,
+    ClassComponent,
+    ProfileFeedComponent,
   ],
   imports: [
     BrowserModule,

@@ -31,6 +31,12 @@ class PostsDao
         return $this->dbConnection->fetch($sql, array($username));
     }
 
+    public function getByClass($classe)
+    {
+        $sql = "SELECT * FROM Posts WHERE class = ?";
+        return $this->dbConnection->fetchAll($sql, array($classe));
+    }
+
     public function createPost($post)
     {
         $sql = "INSERT INTO Posts (username, title, description, class) VALUES (?, ?, ?, ?)";

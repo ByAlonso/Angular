@@ -10,27 +10,17 @@ import {first} from "rxjs/internal/operators/first";
 })
 export class FeedComponent implements OnInit {
 
-	private post: Post[];
-
 	@Input()
 	title:String;
 	@Input()
 	username:String;
 	@Input()
 	description:String;
+	@Input()
+	classe: String;
 
   constructor(private postService: PostService) {
   }
 
-  ngOnInit() {
-		this.postService.getAll().pipe(first()).subscribe(
-			next =>{
-						this.post = next;
-						console.log(this.post);
-			},
-			error =>{
-				console.log("MAL");
-			}
-		)
-	};
+  ngOnInit() {}
 }

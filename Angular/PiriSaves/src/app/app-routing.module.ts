@@ -5,6 +5,7 @@ import {PPComponent} from './pp/pp.component';
 import {LoginComponent} from './login/login.component';
 import {UploadFilesComponent} from './upload-files/upload-files.component';
 import {ProfileComponent} from './profile/profile.component';
+import {ClassComponent} from "./feedDisplay/class/class.component";
 
 const routes: Routes = [
   {path: '', component: PPComponent},
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'uploadFiles/:username', component: UploadFilesComponent},
   {path: 'profile/:username', component: ProfileComponent},
+  {path: ':class', component: ClassComponent},
 
 ];
 
