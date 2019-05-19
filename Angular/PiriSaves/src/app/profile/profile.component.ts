@@ -9,6 +9,7 @@ import {Subscription} from "rxjs";
 import {first} from "rxjs/operators";
 import {Alert, error} from "selenium-webdriver";
 import {AlertService} from "../services/alert.service";
+import {Post} from "../post.model";
 
 @Component({
   selector: 'app-profile',
@@ -23,6 +24,7 @@ export class ProfileComponent implements OnInit {
 	username: String;
 	private sub: any;
 	userForm: FormGroup;
+	private posts: Post[];
 
 	constructor(
 		private authenticationService: AuthenticationService,
@@ -41,9 +43,9 @@ export class ProfileComponent implements OnInit {
 			this.userService.getByUsername(params['params']['username']).subscribe(
 				next=>{
 					this.actualUser = next;
+					this.posts = next['posts'];
 				})
 		});
-
 	}
 
   ngOnInit() {
