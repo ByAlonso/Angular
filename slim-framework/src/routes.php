@@ -21,3 +21,5 @@ $app->delete('/user/{id}', UsersController::class . ':deleteUser');
 
 $app->post('/uploadFiles/{username}',PostsController::class . ':createPost');
 $app->get('/{classe}', PostsController::class . ':getByClass');
+
+$app->get('/profile/{username}', PostsController::class . ':getByUsername');

@@ -25,10 +25,10 @@ class PostsDao
         $this->dbConnection = $dbConnection;
     }
 
-    public function getByID($username)
+    public function getByUsername($username)
     {
-        $sql = "SELECT * FROM Users WHERE Username = ?";
-        return $this->dbConnection->fetch($sql, array($username));
+        $sql = "SELECT * FROM Posts WHERE username = ?";
+        return $this->dbConnection->fetchAll($sql, array($username));
     }
 
     public function getByClass($classe)

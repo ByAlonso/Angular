@@ -42,4 +42,9 @@ class PostsController
         return $response->withJson($post);
     }
 
+    function getByUsername(Request $request, Response $response, array $args)
+    {
+        $posts = $this->dao->getByUsername($args['username']);
+        return $response->withJson($posts);
+    }
 }
