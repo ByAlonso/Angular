@@ -11,8 +11,9 @@ class User
     public $name;
     public $description;
     public $image;
+    public $posts;
 
-    public function __construct($id,$password, $username, $mail,$name,$description,$image)
+    public function __construct($id,$password, $username, $mail,$name,$description,$image, $posts)
     {
         $this->id = $id;
         $this->mail = $mail;
@@ -21,5 +22,6 @@ class User
         $this->name = $name;
         $this->description = $description;
         $this->image = $image;
+        $this->posts = $posts;
     }
 }

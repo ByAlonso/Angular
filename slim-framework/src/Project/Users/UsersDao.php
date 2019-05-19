@@ -31,7 +31,7 @@ class UsersDao
     }
     public function getByUsername($username)
     {
-        $sql = "SELECT * FROM Users WHERE Username = ?";
+        $sql = "SELECT * FROM Users WHERE username = ?";
         return $this->dbConnection->fetch($sql, array($username));
     }
     public function updateUser($username, $user)

@@ -2,6 +2,9 @@
 
 namespace Project\Users;
 
+use Project\Posts\Post;
+use Project\Posts\PostsController;
+use Project\Posts\PostsDao;
 use Psr\Container\ContainerInterface;
 use Slim\Http\Request;
 use Slim\Http\Response;
@@ -9,11 +12,12 @@ use Slim\Http\Response;
 class UsersController
 {
     private $dao;
-
+    private $postDao;
     public function __construct(ContainerInterface $container)
     {
         $dbConnection = $container['dbConnection'];
         $this->dao = new UsersDao($dbConnection);
+        $this->postDao = new PostsDao($dbConnection);
     }
 
     function getAll(Request $request, Response $response, array $args)
@@ -27,14 +31,20 @@ class UsersController
         $user = $this->dao->getById($args['id']);
         return $response->withJson($user);
     }
+
     function getUserByUsername(Request $request, Response $response, array $args)
     {
         $user = $this->dao->getByUsername($args['username']);
+        $posts = $this->postDao->getByUsername($args['username']);
+
+        $user->posts = $posts;
+
         if($user)
             return $response->withJson($user);
         else
             return $response->withStatus(404);
     }
+
 
     function updateUser(Request $request, Response $response, array $args)
     {
