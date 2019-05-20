@@ -90,6 +90,7 @@ export class ProfileComponent implements OnInit {
 			console.log(reader);
 			reader.onload = (event) => { // called once readAsDataURL is completed
 				this.url = event.target['result'];
+				console.log(this.url);
 				this.userForm.controls['image'].setValue(this.url ? this.url : '');
 			}
 		}

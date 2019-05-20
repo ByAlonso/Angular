@@ -37,15 +37,14 @@
 			<input formControlName="description" class="form-control" type="text" value="{{actualPost.description}}"
 						 placeholder="Descripcion"/>
 		</div>
-		<div class="row">
-			<div *ngIf="images != undefined && images != null && images.length != 0">
-				<div *ngFor="let image of images">
-					<div class="flex-column">
-						<img src="{{image}}" style="width: 150px; height: 150px" class="img-thumbnail"/>
-					</div>
-				</div>
+		<div class="row" *ngIf="images != undefined && images != null && images.length != 0">
+			<div class="col-6 text-center" *ngFor="let image of images">
+				<a href="{{image}}">
+				<img src="{{image}}" style="width:auto; height: auto" class="img-thumbnail"/>
+				</a>
 			</div>
 		</div>
+
 
 		<div *ngIf="edit == true && edit2 == false">
 			<input class="coolButtons col-12 ml-auto" type="button" style="padding-left:0 ; background: dodgerblue"

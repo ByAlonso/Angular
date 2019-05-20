@@ -1,11 +1,10 @@
 
-<body>
 <!-- main -->
-<div class="main-w3layouts wrapper">
+<div class="main-w3layouts wrapper mh-100 back">
   <h1>PiriSaves</h1>
   <h3>El mejor blog de animales de toda la historia</h3>
-  <div class="main-agileinfo">
-    <div class="agileits-top">
+  <div class="main-agileinfo h-100">
+    <div class="agileits-top ">
       <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
 
 				<input type="text" formControlName="username"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" placeholder="Username">
@@ -29,9 +28,5 @@
   </div>
 
 </div>
-
-
-<!-- //main -->
-</body>
 
 <app-footer></app-footer>

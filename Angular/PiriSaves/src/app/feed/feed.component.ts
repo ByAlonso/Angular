@@ -58,6 +58,7 @@ export class FeedComponent implements OnInit {
 		});
 		this.postService.getPhotos(this.id).pipe(first()).subscribe(
 			next =>{
+				console.log(next);
 				for(var x = 0; x < next.length; x++)
 				{
 					this.images.push(next[x]['image']);

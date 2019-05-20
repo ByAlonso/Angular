@@ -108,7 +108,7 @@ img {
 }
 
 /*-- end reset --*/
-body {
+.back {
   background: #76b852;
   /* fallback for old browsers */
   background: -webkit-linear-gradient(to top, #76b852, #8DC26F);

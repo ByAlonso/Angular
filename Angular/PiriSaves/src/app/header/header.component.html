@@ -68,8 +68,8 @@
 		</div>
 
 		<div *ngIf="currentUser != null" class="navbar-collapse dual-collapse2">
-			<ul class="navbar-nav ml-auto">
-				<form class="wrap" [formGroup]="userForm" (ngSubmit)="search()">
+			<ul class="navbar-nav ml-auto ">
+				<form class="wrap d-none d-lg-block" [formGroup]="userForm" (ngSubmit)="search()">
 					<div class="search">
 						<input type="text" class="searchTerm form-control" formControlName="searchItem" placeholder="Introduce usuario">
 						<button type="submit" class="searchButton">

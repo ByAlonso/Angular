@@ -74,5 +74,8 @@ class PostsDao
     {
         $sql = "DELETE FROM Posts WHERE id = ?";
         $this->dbConnection->execute($sql, array($id));
+
+        $sql = "DELETE FROM Imagenes WHERE ID = ?";
+        $this->dbConnection->execute($sql, array($id));
     }
 }
