@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="218e1b14-4c65-4b5c-a81d-15f481ce2173" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PiriSaves/src/app/feed/feed.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/PiriSaves/src/app/feed/feed.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PiriSaves/src/app/feed/feed.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/PiriSaves/src/app/feed/feed.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PiriSaves/src/app/footer/footer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/PiriSaves/src/app/footer/footer.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PiriSaves/src/app/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/PiriSaves/src/app/header/header.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PiriSaves/src/app/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/PiriSaves/src/app/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PiriSaves/src/app/profile/profile.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/PiriSaves/src/app/profile/profile.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PiriSaves/src/app/profile/profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/PiriSaves/src/app/profile/profile.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PiriSaves/src/app/register/register.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/PiriSaves/src/app/register/register.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PiriSaves/src/app/register/register.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/PiriSaves/src/app/register/register.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PiriSaves/src/app/upload-files/upload-files.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/PiriSaves/src/app/upload-files/upload-files.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PiriSaves/src/app/upload-files/upload-files.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/PiriSaves/src/app/upload-files/upload-files.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RestServer" beforeDir="false" afterPath="$PROJECT_DIR$/../RestServer" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../slim-framework/src/Project/Users/UsersDao.php" beforeDir="false" afterPath="$PROJECT_DIR$/../slim-framework/src/Project/Users/UsersDao.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -65,8 +54,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PiriSaves/src/app/profile/profile.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="46" column="60" lean-forward="true" selection-start-line="46" selection-start-column="60" selection-end-line="46" selection-end-column="60" />
+            <state relative-caret-position="454">
+              <caret line="57" column="49" selection-start-line="57" selection-start-column="49" selection-end-line="57" selection-end-column="49" />
               <folding>
                 <element signature="n#style#0;n#img#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
@@ -268,87 +257,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Angular" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Angular" type="462c0819:PsiDirectoryNode" />
-              <item name="PiriSaves" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="feed" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Angular" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Angular" type="462c0819:PsiDirectoryNode" />
-              <item name="PiriSaves" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="feedDisplay" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Angular" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Angular" type="462c0819:PsiDirectoryNode" />
-              <item name="PiriSaves" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="feedDisplay" type="462c0819:PsiDirectoryNode" />
-              <item name="general" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Angular" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Angular" type="462c0819:PsiDirectoryNode" />
-              <item name="PiriSaves" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="footer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Angular" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Angular" type="462c0819:PsiDirectoryNode" />
-              <item name="PiriSaves" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="header" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Angular" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Angular" type="462c0819:PsiDirectoryNode" />
-              <item name="PiriSaves" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Angular" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Angular" type="462c0819:PsiDirectoryNode" />
-              <item name="PiriSaves" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="profile" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Angular" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Angular" type="462c0819:PsiDirectoryNode" />
-              <item name="PiriSaves" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="register" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Angular" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Angular" type="462c0819:PsiDirectoryNode" />
-              <item name="PiriSaves" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Angular" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Angular" type="462c0819:PsiDirectoryNode" />
-              <item name="PiriSaves" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="upload-files" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -428,7 +336,7 @@
       <updated>1557677770157</updated>
       <workItem from="1557677772334" duration="46355000" />
       <workItem from="1557955123631" duration="1759000" />
-      <workItem from="1557999298638" duration="98321000" />
+      <workItem from="1557999298638" duration="98467000" />
     </task>
     <task id="LOCAL-00001" summary="V1">
       <created>1558179250282</created>
@@ -500,11 +408,18 @@
       <option name="project" value="LOCAL" />
       <updated>1558380161912</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Final">
+      <created>1558384079201</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1558384079201</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="146435000" />
+    <option name="totallyTimeSpent" value="146581000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -562,7 +477,8 @@
     <MESSAGE value="V2" />
     <MESSAGE value="Añadido feed general" />
     <MESSAGE value="Añadido edit posts" />
-    <option name="LAST_COMMIT_MESSAGE" value="Añadido edit posts" />
+    <MESSAGE value="Final" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/PiriSaves/src/app/alert/alert.component.html">
@@ -949,8 +865,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PiriSaves/src/app/profile/profile.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="46" column="60" lean-forward="true" selection-start-line="46" selection-start-column="60" selection-end-line="46" selection-end-column="60" />
+        <state relative-caret-position="454">
+          <caret line="57" column="49" selection-start-line="57" selection-start-column="49" selection-end-line="57" selection-end-column="49" />
           <folding>
             <element signature="n#style#0;n#img#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#2;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#!!top" expanded="true" />

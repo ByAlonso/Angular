@@ -53,8 +53,7 @@ class UsersDao
         }
         else
         {
-            //Este error hay que detectarlo para mandar una alerta
-            return "Usuario ya existente";
+            return false;
         }
 
     }
