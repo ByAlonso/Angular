@@ -31,9 +31,18 @@
 								<div class="ml-auto">
 									<!--ESTO SOLO SI LOS PERFILES COINCIDEN-->
 									<div *ngIf="edit == false && actualUser != undefined && currentUser != undefined && actualUser.username==currentUser.username">
-										<button class="coolButtons" routerLink='/uploadFiles/{{currentUser.username}}'>Subir post</button>
-										<button class="coolButtons" (click)="activarEdit()" id = "editarPerfil">Editar perfil</button>
-										<button class="coolButtons" (click)="deleteUser()"  style="background:red" id = "borrarPerfil">Borrar perfil</button>
+										<div *ngIf="borrado == false">
+											<button class="coolButtons" routerLink='/uploadFiles/{{currentUser.username}}'>Subir post</button>
+											<button class="coolButtons" (click)="activarEdit()" id = "editarPerfil">Editar perfil</button>
+										</div>
+										<div *ngIf="borrado == false">
+										<button class="coolButtons" (click)="borradoUser()"  style="background:red" id ="borrarPerfil">Borrar perfil</button>
+										</div>
+										<div *ngIf="borrado == true">
+											<label>¿Seguro que quieres borrar el usuario?</label>
+											<button class="coolButtons" (click)="deleteUser()"  style="background:red" >Confirmar</button>
+											<button class="coolButtons" (click)="noBorradoUser()"  style="background:Blue" >Cancelar</button>
+										</div>
 									</div>
 									<!--ESTO SOLO SI LOS PERFILES COINCIDEN-->
 
@@ -89,7 +98,6 @@
 											</div>
 										</div>
 										<hr />
-
 									</div>
 								</div>
 							</div>
@@ -107,9 +115,9 @@
 			<app-feed [id]="post['ID']" [title]="post.title" [description]="post.description" [username]="post.username" [classe]="post['class']" [edit] = "true"></app-feed>
 		</div>
 	</div>
-	<div *ngIf="currentUser == undefined">
+	<div *ngIf="actualUser != undefined">
 		<div *ngFor="let post of posts">
-			<app-feed [title]="post.title" [description]="post.description" [username]="post.username" [classe]="post['class']" [edit] = "false"  ></app-feed>
+			<app-feed [id]="post['ID']" [title]="post.title" [description]="post.description" [username]="post.username" [classe]="post['class']" [edit] = "false"  ></app-feed>
 		</div>
 	</div>
 

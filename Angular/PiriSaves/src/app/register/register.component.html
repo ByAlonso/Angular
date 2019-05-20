@@ -21,6 +21,7 @@
 					<div *ngIf="f.password.errors.required">Password is required</div>
 					<div *ngIf="f.password.errors.minlength">Password must be at least 3 characters</div>
 				</div>
+				<div *ngIf="alerta==true" style="color:red">Usuario ya registrado</div>
 				<input type="submit" value="SIGN UP">
       </form>
       <p>Have an Account? <a [routerLink]="['/login']"> Login</a></p>

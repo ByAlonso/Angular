@@ -56,17 +56,25 @@ export class FeedComponent implements OnInit {
 			class:new FormControl(),
 			images: new FormControl(''),
 		});
+
+		this.postService.getPost(this.id).pipe(first()).subscribe(
+			next =>{
+				this.actualPost = next[0];
+			}
+		);
+
+
+
 		this.postService.getPhotos(this.id).pipe(first()).subscribe(
 			next =>{
-				console.log(next);
 				for(var x = 0; x < next.length; x++)
 				{
 					this.images.push(next[x]['image']);
 				}
-
 			}
 		);
 	}
+
 
 	desactivateEdit()
 	{
@@ -76,6 +84,8 @@ export class FeedComponent implements OnInit {
 	activateEdit()
 	{
 		this.edit2 = true;
+
+		console.log(this.actualPost);
 	}
 
 	deletePost() {
@@ -103,6 +113,7 @@ export class FeedComponent implements OnInit {
 		{
 			this.postForm.value['class'] = this.actualPost.classe;
 		}
+
 		this.desactivateEdit();
 		console.log(this.postForm.value);
 		this.postService.updatePost(this.postForm.value).pipe(first()).subscribe(

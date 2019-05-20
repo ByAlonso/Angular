@@ -14,7 +14,7 @@
 					</div>
 					<a class="user" routerLink="/profile/{{username}}">{{username}}</a>
 					<div *ngIf="edit2 == true && actualPost != undefined">
-						<select formControlName="class" class=" form-control custom-select custom-select-lg mb-3">
+						<select formControlName="class" class=" form-control custom-select custom-select-lg mb-3" value="{{actualPost.classe}}">
 							<option>Mamiferos</option>
 							<option>Peces</option>
 							<option>Anfibios</option>

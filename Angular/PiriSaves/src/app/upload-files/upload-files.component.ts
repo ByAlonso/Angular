@@ -76,9 +76,9 @@ export class UploadFilesComponent implements OnInit {
 
 
 	onSubmit() {
-		if (this.postForm.invalid) {
-			return;
-		}
+
+		(<HTMLInputElement>document.getElementById('botonUpload')).disabled =true;
+
 		this.postForm.controls['images'].setValue(this.images ? this.images : '');
 
 		console.log(this.postForm.value);
@@ -90,6 +90,7 @@ export class UploadFilesComponent implements OnInit {
 				location.reload();
 			},
 			error => {
+				(<HTMLInputElement>document.getElementById('botonUpload')).disabled = false;
 				console.log("MAL");
 			}
 		);

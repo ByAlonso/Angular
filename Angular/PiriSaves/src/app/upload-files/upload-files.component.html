@@ -30,7 +30,7 @@
 			<label for="exampleFormControlTextarea2">Descripcion</label>
 			<textarea formControlName="description" class="form-control" id="exampleFormControlTextarea2" rows="3"></textarea>
 		</div>
-		<button type="submit">Upload</button>
+		<button type="submit" id ="botonUpload" [disabled]="!postForm.valid">Upload</button>
 	</form>
 
 </body>

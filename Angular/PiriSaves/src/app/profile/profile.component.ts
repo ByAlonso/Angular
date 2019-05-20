@@ -30,6 +30,7 @@ export class ProfileComponent implements OnInit {
 	userForm: FormGroup;
 	private posts: Post[];
 	url = '';
+	borrado :boolean;
 
 	constructor(
 		private authenticationService: AuthenticationService,
@@ -60,6 +61,7 @@ export class ProfileComponent implements OnInit {
 	ngOnInit() {
 
 		this.desactivarEdit();
+		this.noBorradoUser();
 		this.userForm = this.formBuilder.group({
 			username: new FormControl(),
 			name: new FormControl(),
@@ -96,6 +98,14 @@ export class ProfileComponent implements OnInit {
 		}
 	}
 
+	borradoUser()
+	{
+		this.borrado = true;
+	}
+	noBorradoUser()
+	{
+		this.borrado = false;
+	}
 
 	onSubmit() {
 		console.log(this.userForm.value);

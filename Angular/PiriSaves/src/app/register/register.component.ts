@@ -16,7 +16,7 @@ export class RegisterComponent implements OnInit {
 	userForm: FormGroup;
 	loading = false;
 	submitted = false;
-
+	alerta = false;
 	constructor(
 		private formBuilder: FormBuilder,
 		private router: Router,
@@ -52,11 +52,18 @@ export class RegisterComponent implements OnInit {
 			.pipe(first())
 			.subscribe(
 				data => {
-					this.alertService.success('Registration successful', true);
-					this.router.navigate(['/login']);
+					if(data != false)
+					{
+						this.alertService.success('Registration successful', true);
+						this.router.navigate(['/login']);
+					}
+					else
+					{
+						this.alerta = true;
+					}
 				},
 				error => {
-					this.alertService.error(error);
+					this.alertService.error("No se ha podido registrar correctamente");
 					this.loading = false;
 				});
 	}
