@@ -6,6 +6,7 @@ import {LoginComponent} from './login/login.component';
 import {UploadFilesComponent} from './upload-files/upload-files.component';
 import {ProfileComponent} from './profile/profile.component';
 import {ClassComponent} from "./feedDisplay/class/class.component";
+import {NotFoundComponent} from "./feedDisplay/not-found/not-found.component";
 
 const routes: Routes = [
   {path: '', component: PPComponent},
@@ -14,6 +15,9 @@ const routes: Routes = [
   {path: 'uploadFiles/:username', component: UploadFilesComponent},
   {path: 'profile/:username', component: ProfileComponent},
   {path: ':class', component: ClassComponent},
+	{path: '**',component:NotFoundComponent},
+
+
 
 ];
 

@@ -16,9 +16,19 @@ $app->put('/profile/{username}', UsersController::class . ':updateUser');//->add
 $app->post('/register', UsersController::class . ':createUser');
 
 $app->post('/login', UsersController::class . ':loginUser');
+
 $app->delete('/user/{id}', UsersController::class . ':deleteUser');
 
 
 $app->post('/uploadFiles/{username}',PostsController::class . ':createPost');
+
 $app->get('/{classe}', PostsController::class . ':getByClass');
+
+$app->delete('/profile/{id}',PostsController::class . ':deletePostById');
+
+$app->delete('/profile/delete/{username}',UsersController::class . ':deleteUser');
+
+$app->get('/profile/edit/{id}', PostsController::class . ':getPost');
+
+$app->put('/profile/edit/{id}', PostsController::class . ':updatePost');
 

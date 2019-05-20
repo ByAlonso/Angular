@@ -27,13 +27,27 @@ class PostsDao
 
     public function getByUsername($username)
     {
-        $sql = "SELECT * FROM Posts WHERE username = ?";
+        $sql = "SELECT * FROM Posts WHERE username = ? ORDER BY ID DESC";
         return $this->dbConnection->fetchAll($sql, array($username));
+    }
+    public function getById($id)
+    {
+        $sql = "SELECT * FROM Posts WHERE ID = ?";
+        return $this->dbConnection->fetchAll($sql, array($id));
+    }
+
+    public function updatePost($id, $post)
+    {
+        $sql = "UPDATE Posts SET title = ?, description = ?, class = ? WHERE ID = ?";
+        $this->dbConnection->execute($sql, array($post['title'], $post['description'],$post['class'], $id));
+
+        return $this->getById($id);
     }
 
     public function getByClass($classe)
     {
-        $sql = "SELECT * FROM Posts WHERE class = ?";
+        $sql = "SELECT * FROM Posts p, Imagenes i WHERE p.class = ? and 
+        p.ID = i.ID ORDER BY p.ID DESC";
         return $this->dbConnection->fetchAll($sql, array($classe));
     }
 
@@ -42,7 +56,18 @@ class PostsDao
         $sql = "INSERT INTO Posts (username, title, description, class) VALUES (?, ?, ?, ?)";
         $id = $this->dbConnection->insert($sql, array($post['username'], $post['title'], $post['description'],
             $post['classe']));
+
+        $sql = "INSERT INTO Imagenes (ID, image) VALUES (?,?)";
+        for ($x = 0; $x < count($post['images']); $x++) {
+            $this->dbConnection->insert($sql,array($id,$post['images'][$x]));
+        }
+
         return $id;
-        //falta añadir las fotos de los posts
+    }
+
+    public function delete($id)
+    {
+        $sql = "DELETE FROM Posts WHERE id = ?";
+        $this->dbConnection->execute($sql, array($id));
     }
 }

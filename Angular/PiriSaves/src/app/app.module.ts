@@ -19,7 +19,7 @@ import { AlertComponent } from './alert/alert.component';
 import {PostService} from "./services/post.service";
 import { GeneralComponent } from './feedDisplay/general/general.component';
 import { ClassComponent } from './feedDisplay/class/class.component';
-import { ProfileFeedComponent } from './feedDisplay/profile-feed/profile-feed.component';
+import { NotFoundComponent } from './feedDisplay/not-found/not-found.component';
 
 
 @NgModule({
@@ -36,7 +36,7 @@ import { ProfileFeedComponent } from './feedDisplay/profile-feed/profile-feed.co
     AlertComponent,
     GeneralComponent,
     ClassComponent,
-    ProfileFeedComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,

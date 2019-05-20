@@ -35,6 +35,19 @@ class PostsController
         return $response->withJson($posts);
     }
 
+    function getPost(Request $request, Response $response, array $args)
+    {
+        $posts = $this->dao->getById($args['id']);
+        return $response->withJson($posts);
+    }
+    function updatePost(Request $request, Response $response, array $args)
+    {
+        $id = $args['id'];
+        $body = $request->getParsedBody();
+        $user = $this->dao->updatePost($id, $body);
+        return $response->withJson($user);
+    }
+
     function createPost(Request $request, Response $response, array $args)
     {
         $body = $request->getParsedBody();
@@ -46,5 +59,12 @@ class PostsController
     {
         $posts = $this->dao->getByUsername($args['username']);
         return $response->withJson($posts);
+    }
+
+    function deletePostById(Request $request, Response $response, array $args)
+    {
+        $postID = $args['id'];
+        $this->dao->delete($postID);
+        return $response->withStatus(201);
     }
 }

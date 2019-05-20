@@ -35,12 +35,13 @@ class UsersController
     function getUserByUsername(Request $request, Response $response, array $args)
     {
         $user = $this->dao->getByUsername($args['username']);
-        $posts = $this->postDao->getByUsername($args['username']);
-
-        $user->posts = $posts;
-
         if($user)
+        {
+            $posts = $this->postDao->getByUsername($args['username']);
+            $user->posts = $posts;
             return $response->withJson($user);
+        }
+
         else
             return $response->withStatus(404);
     }
@@ -48,19 +49,6 @@ class UsersController
 
     function updateUser(Request $request, Response $response, array $args)
     {
-       /* if ($requestUserId = $request->getAttribute('token')->ID) {
-            $username = $args['username'];
-            if ($requestUserId === $username) {
-                $body = $request->getParsedBody();
-                $user = $this->dao->updateUser($username, $body);
-                return $response->withJson($user);
-            } else {
-                return "patatas";
-                return $response->withStatus(401);
-            }
-        } else {
-            return $response->withStatus(404);
-        }*/
         $username = $args['username'];
         $body = $request->getParsedBody();
         $user = $this->dao->updateUser($username, $body);
@@ -86,8 +74,8 @@ class UsersController
 
     function deleteUser(Request $request, Response $response, array $args)
     {
-        $userId = $args['id'];
-        $this->dao->delete($userId);
+        $username = $args['username'];
+        $this->dao->delete($username);
         return $response->withStatus(201);
     }
 }

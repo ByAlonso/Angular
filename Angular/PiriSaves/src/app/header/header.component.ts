@@ -6,6 +6,7 @@ import {AuthenticationService} from "../services/authentication.service";
 import {Subscription} from "rxjs";
 import {first} from "rxjs/internal/operators/first";
 import {Router} from "@angular/router";
+import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 
 @Component({
 	selector: 'app-header',
@@ -15,12 +16,19 @@ import {Router} from "@angular/router";
 export class HeaderComponent implements OnInit {
 	currentUser: User;
 	currentUserSubscription: Subscription;
-
+	searchItem: FormControl;
+	userForm: FormGroup;
 	constructor(
 		private authenticationService: AuthenticationService,
+		private router: Router,
+		private formBuilder: FormBuilder,
 	) {
 		this.currentUserSubscription = this.authenticationService.currentUser.subscribe(user => {
 			this.currentUser = user;
+		});
+
+		this.userForm = this.formBuilder.group({
+			searchItem: new FormControl()
 		});
 	}
 
@@ -28,6 +36,11 @@ export class HeaderComponent implements OnInit {
 
 	}
 
+	search()
+	{
+		console.log(this.userForm.value['searchItem']);
+		this.router.navigate(['/profile/'+  this.userForm.value['searchItem']]);
+	}
 	logoutClicked() {
 		this.authenticationService.logout();
 	}

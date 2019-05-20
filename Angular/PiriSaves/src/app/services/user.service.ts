@@ -33,7 +33,7 @@ export class UserService {
 		return this.http.put(`http://localhost:80/profile/` + user.username, user);
 	}
 
-	delete(id: number) {
-		return this.http.delete(`/` + id);
+	delete(username:String) {
+		return this.http.delete(`http://localhost:80/profile/delete/` + username);
 	}
 }

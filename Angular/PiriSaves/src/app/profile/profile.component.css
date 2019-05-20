@@ -5,7 +5,19 @@ body{
 .image-container {
   position: relative;
 }
+input[type="text"]{
+	font-size: 0.9em;
+	font-weight: 100;
+	width: 94.5%;
+	display: block;
 
+	padding: 0.8em;
+	border: solid 1px rgba(0, 0, 0, 1);
+	-webkit-transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+	transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+
+	font-family: 'Roboto', sans-serif;
+}
 .image {
   opacity: 1;
   display: block;

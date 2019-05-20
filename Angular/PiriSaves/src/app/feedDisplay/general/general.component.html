@@ -1,6 +1,6 @@
-
-	<div *ngFor="let post of posts">
-		<app-feed [title]="post.title" [description]="post.description" [username]="post.username" [classe]="post['class']"></app-feed>
-	</div>
+<div *ngFor="let post of posts">
+	<app-feed [id] = "post['ID']" [title]="post.title" [description]="post.description" [username]="post.username" [edit]="false"
+						[classe]="post['class']" ></app-feed>
+</div>
 
 

@@ -11,20 +11,20 @@
 						<div class="card-title mb-4">
 							<div class="d-flex justify-content-start">
 								<div class="image-container">
-									<img src="http://placehold.it/150x150" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
 
+								<div *ngIf="actualUser != undefined">
+									<img *ngIf="actualUser.image == null || actualUser.image == ''" src="http://placehold.it/150x150" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
+									<img *ngIf="actualUser.image != null && actualUser.image != ''" src="{{actualUser.image}}" style="width: 150px; height: 150px" class="img-thumbnail" />
+								</div>
 									<div *ngIf="edit == true" class="middle">
-										<!--<input type="button" class="btn btn-secondary" id="btnChangePicture" value="Change" />-->
-										<input type="file" id="profilePicture" formControlName="image" class="form-control" name="file" />
+										<label class="btn btn-secondary btn-file">Browse
+											<input name="file" type="file" (change)="onSelectFile($event)">
+											<input type="hidden" name="fileHidden" formControlName="image"/> <!-- Validation Field -->
+										</label>
 									</div>
-
 								</div>
 								<div class="userData ml-3" *ngIf="actualUser != undefined">
 									<h2 class="d-block" style="font-size: 1.5rem; font-weight: bold; font-family: 'Roboto', sans-serif;" ><a>{{actualUser.username}}</a></h2>
-									<p *ngIf="actualUser.description != null && edit == false">{{actualUser.description}}</p>
-									<div *ngIf="actualUser.description != null && edit == true">
-										<input type="text" formControlName="description" class="form-control" value="{{actualUser.description}}"/>
-									</div>
 								</div>
 
 
@@ -33,6 +33,7 @@
 									<div *ngIf="edit == false && actualUser != undefined && currentUser != undefined && actualUser.username==currentUser.username">
 										<button class="coolButtons" routerLink='/uploadFiles/{{currentUser.username}}'>Subir post</button>
 										<button class="coolButtons" (click)="activarEdit()" id = "editarPerfil">Editar perfil</button>
+										<button class="coolButtons" (click)="deleteUser()"  style="background:red" id = "borrarPerfil">Borrar perfil</button>
 									</div>
 									<!--ESTO SOLO SI LOS PERFILES COINCIDEN-->
 
@@ -40,12 +41,7 @@
 
 									<div *ngIf="edit == true ">
 
-
-
 										<input class="coolButtons" type="submit" style="background: green" value="Guardar"/>
-
-
-
 
 										<button class="coolButtons" (click)="desactivarEdit()">Cancelar</button>
 									</div>
@@ -74,18 +70,26 @@
 											<div *ngIf=" actualUser != undefined && actualUser.name != null && edit==false" class="col-md-8 col-6">
 												{{actualUser.name}}
 											</div>
-
-
-
-											<div *ngIf=" actualUser != undefined && actualUser.name != null && edit==true" class="col-md-8 col-7">
-												<input formControlName="name" class="form-control" type ="text" value="{{actualUser.name}}"/>
+											<div *ngIf="edit==true" class="col-md-8 col-7">
+												<input formControlName="name" class="form-control" type ="text" value="{{actualUser.name}}" placeholder="Nombre completo"/>
 											</div>
-
-
-
-
 										</div>
 										<hr />
+
+										<div class="row">
+											<div class="col-sm-3 col-md-2 col-5">
+												<label style="font-weight:bold;">Descripcion</label>
+											</div>
+											<div class="col-md-8 col-6" *ngIf="actualUser != undefined">
+												<p class="col-md-8 col-6" *ngIf="actualUser.description != null && edit == false">{{actualUser.description}}</p>
+
+												<div *ngIf="edit == true" class="col-md-8 col-7">
+													<input type="text" formControlName="description" class="form-control" value="{{actualUser.description}}" placeholder="Descripcion"/>
+												</div>
+											</div>
+										</div>
+										<hr />
+
 									</div>
 								</div>
 							</div>
@@ -98,9 +102,17 @@
 	</div>
 	</form>
 	<!-- AQUI TIENEN QUE IR TODOS LOS POSTS-->
-	<div *ngFor="let post of posts">
-		<app-feed [title]="post.title" [description]="post.description" [username]="post.username" [classe]="post['class']"></app-feed>
+	<div *ngIf="actualUser != undefined && currentUser != undefined && actualUser.username == currentUser.username">
+		<div *ngFor="let post of posts">
+			<app-feed [id]="post['ID']" [title]="post.title" [description]="post.description" [username]="post.username" [classe]="post['class']" [edit] = "true"></app-feed>
+		</div>
 	</div>
+	<div *ngIf="currentUser == undefined">
+		<div *ngFor="let post of posts">
+			<app-feed [title]="post.title" [description]="post.description" [username]="post.username" [classe]="post['class']" [edit] = "false"  ></app-feed>
+		</div>
+	</div>
+
 
 	<app-footer></app-footer>
 

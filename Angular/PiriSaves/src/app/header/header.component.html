@@ -1,80 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>PiriSaves</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-          integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-          crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-          integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-          crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-          integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-          crossorigin="anonymous"></script>
+	<title>PiriSaves</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+				integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+					integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+					crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+					integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+					crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+					integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+					crossorigin="anonymous"></script>
 
 </head>
 
 <body>
 <nav class="navbar navbar-expand-sm sticky-top">
-  <a class="navbar-brand" routerLink='/'>
-    <img src="https://centreverd.com/wp-content/uploads/2018/02/cropped-logo-arbol-300x300.png">
-  </a>
-  <button class="navbar-toggler navbar-dark" style="background: #76b852" type="button"
-          data-toggle="collapse" data-target="#navbar1" aria-controls="navbar1"
-          aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon navbar-light"></span>
-  </button>
+	<a class="navbar-brand" routerLink='/'>
+		<img src="https://centreverd.com/wp-content/uploads/2018/02/cropped-logo-arbol-300x300.png">
+	</a>
+	<button class="navbar-toggler navbar-dark" style="background: #76b852" type="button"
+					data-toggle="collapse" data-target="#navbar1" aria-controls="navbar1"
+					aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon navbar-light"></span>
+	</button>
 
-  <div class="collapse navbar-collapse sticky-top" id="navbar1">
-    <ul class="navbar-nav">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-          Animales
-        </a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" routerLink='/Mamiferos' >Mamíferos</a>
-          <a class="dropdown-item" routerLink='/Peces' >Peces</a>
-          <a class="dropdown-item" routerLink='/Reptiles' >Reptiles</a>
-          <a class="dropdown-item" routerLink='/Aves'>Aves</a>
-          <a class="dropdown-item" routerLink='/Anfibios'>Anfíbios</a>
-        </div>
-      </li>
-      <li>
-        <a class="nav-link disabled" href=#>Rutas</a>
-      </li>
-    </ul>
+	<div class="collapse navbar-collapse sticky-top" id="navbar1">
+		<ul class="navbar-nav">
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+					Animales
+				</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" routerLink='/Mamiferos'>Mamíferos</a>
+					<a class="dropdown-item" routerLink='/Peces'>Peces</a>
+					<a class="dropdown-item" routerLink='/Reptiles'>Reptiles</a>
+					<a class="dropdown-item" routerLink='/Aves'>Aves</a>
+					<a class="dropdown-item" routerLink='/Anfibios'>Anfíbios</a>
+				</div>
+			</li>
+			<li>
+				<a class="nav-link disabled" href=#>Rutas</a>
+			</li>
+		</ul>
 
-    <div *ngIf="currentUser == null" class="navbar-collapse dual-collapse2">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/register']">Register</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/login']">Login</a>
-        </li>
-      </ul>
-    </div>
+		<div *ngIf="currentUser == null" class="navbar-collapse dual-collapse2">
+			<ul class="navbar-nav ml-auto">
+				<form class="wrap" [formGroup]="userForm" (ngSubmit)="search()">
+					<div class="search">
+						<input type="text" class="searchTerm form-control" formControlName="searchItem" placeholder="Introduce usuario">
+						<button type="submit" class="searchButton">
+							<i class="fa fa-search"></i>
+						</button>
+					</div>
+				</form>
+				<li class="nav-item">
+					<a class="nav-link" [routerLink]="['/register']">Register</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" [routerLink]="['/login']">Login</a>
+				</li>
+			</ul>
+		</div>
 
-    <div *ngIf="currentUser != null" class="navbar-collapse dual-collapse2">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="profiledrop" data-toggle="dropdown">
-            {{currentUser.username}}
-          </a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" routerLink='/profile/{{currentUser.username}}'>Mi perfil</a>
-            <a class="dropdown-item" routerLink='/uploadFiles/{{currentUser.username}}'>Subir post</a>
-            <a class="dropdown-item" routerLink='/' (click)="logoutClicked()">Logout</a>
-          </div>
-        </li>
-      </ul>
-    </div>
+		<div *ngIf="currentUser != null" class="navbar-collapse dual-collapse2">
+			<ul class="navbar-nav ml-auto">
+				<form class="wrap" [formGroup]="userForm" (ngSubmit)="search()">
+					<div class="search">
+						<input type="text" class="searchTerm form-control" formControlName="searchItem" placeholder="Introduce usuario">
+						<button type="submit" class="searchButton">
+							<i class="fa fa-search"></i>
+						</button>
+					</div>
+				</form>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="profiledrop" data-toggle="dropdown">
+						{{currentUser.username}}
+					</a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" routerLink='/profile/{{currentUser.username}}'>Mi perfil</a>
+						<a class="dropdown-item" routerLink='/uploadFiles/{{currentUser.username}}'>Subir post</a>
+						<a class="dropdown-item" routerLink='/' (click)="logoutClicked()">Logout</a>
+					</div>
+				</li>
+			</ul>
+		</div>
 
-  </div>
+	</div>
 </nav>
 </body>
 </html>

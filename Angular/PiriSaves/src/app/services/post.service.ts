@@ -18,6 +18,10 @@ export class PostService {
 		return this.http.get<Post[]>(`http://localhost:80/` + classe);
 	}
 
+	getPost(id: number)
+	{
+		return this.http.get<Post>('http://localhost:80/profile/edit/' + id);
+	}
 	getByUsername(username:String)
 	{
 		return this.http.get<Post[]>('http://localhost:80/profile/' + username);
@@ -27,11 +31,11 @@ export class PostService {
 		return this.http.post('http://localhost:80/uploadFiles/' + poste.username, poste);
 	}
 
-	update(user: User) {
-		return this.http.put(`http://localhost:80/profile/` + user.username, user);
+	updatePost(poste:Post) {
+		return this.http.put(`http://localhost:80/profile/edit/` + poste.id, poste);
 	}
 
 	delete(id: number) {
-		return this.http.delete(`/` + id);
+		return this.http.delete('http://localhost:80/profile/' + id);
 	}
 }
