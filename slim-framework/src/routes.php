@@ -32,3 +32,5 @@ $app->get('/profile/edit/{id}', PostsController::class . ':getPost');
 
 $app->put('/profile/edit/{id}', PostsController::class . ':updatePost');
 
+$app->get('/getPhotos/{id}', PostsController::class . ':getPhotos');
+

@@ -44,21 +44,11 @@ export class FeedComponent implements OnInit {
 							private router: Router,
 							private alertService: AlertService,
 							private formBuilder: FormBuilder) {
+
 	}
 
 	ngOnInit() {
 		this.desactivateEdit();
-
-		this.postService.getPost(this.id).pipe(first()).subscribe(
-			next=> {
-				this.actualPost = next;
-				this.actualPost.id = next[0]['id'];
-				this.actualPost.description = next[0]['description'];
-				this.actualPost.title = next[0]['title'];
-				this.actualPost.classe = next[0]['class'];
-
-			});
-
 		this.postForm = this.formBuilder.group({
 			id: this.id,
 			title: new FormControl(),
@@ -66,8 +56,15 @@ export class FeedComponent implements OnInit {
 			class:new FormControl(),
 			images: new FormControl(''),
 		});
+		this.postService.getPhotos(this.id).pipe(first()).subscribe(
+			next =>{
+				for(var x = 0; x < next.length; x++)
+				{
+					this.images.push(next[x]['image']);
+				}
 
-
+			}
+		);
 	}
 
 	desactivateEdit()

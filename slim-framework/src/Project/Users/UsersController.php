@@ -75,7 +75,8 @@ class UsersController
     function deleteUser(Request $request, Response $response, array $args)
     {
         $username = $args['username'];
-        $this->dao->delete($username);
+        $a = $this->dao->delete($username);
+        return $response->withJson($a);
         return $response->withStatus(201);
     }
 }

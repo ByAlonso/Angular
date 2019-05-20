@@ -126,7 +126,7 @@ export class ProfileComponent implements OnInit {
 			next => {
 				console.log("Usuario eliminado correctamente");
 				this.authenticationService.logout();
-				this.router.navigate(['/']);
+				this.router.navigate(['/#']);
 			}
 		)
 	}

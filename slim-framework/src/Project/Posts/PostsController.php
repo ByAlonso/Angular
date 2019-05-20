@@ -48,6 +48,12 @@ class PostsController
         return $response->withJson($user);
     }
 
+    function getPhotos(Request $request, Response $response, array $args)
+    {
+        $photos = $this->dao->getPhotosById($args['id']);
+        return $response->withJson($photos);
+    }
+
     function createPost(Request $request, Response $response, array $args)
     {
         $body = $request->getParsedBody();

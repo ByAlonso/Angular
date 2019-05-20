@@ -15,7 +15,7 @@
 					<a class="user" routerLink="/profile/{{username}}">{{username}}</a>
 					<div *ngIf="edit2 == true && actualPost != undefined">
 						<select formControlName="class" class=" form-control custom-select custom-select-lg mb-3">
-							<option >Mamiferos</option>
+							<option>Mamiferos</option>
 							<option>Peces</option>
 							<option>Anfibios</option>
 							<option>Reptiles</option>
@@ -37,7 +37,15 @@
 			<input formControlName="description" class="form-control" type="text" value="{{actualPost.description}}"
 						 placeholder="Descripcion"/>
 		</div>
-
+		<div class="row">
+			<div *ngIf="images != undefined && images != null && images.length != 0">
+				<div *ngFor="let image of images">
+					<div class="flex-column">
+						<img src="{{image}}" style="width: 150px; height: 150px" class="img-thumbnail"/>
+					</div>
+				</div>
+			</div>
+		</div>
 
 		<div *ngIf="edit == true && edit2 == false">
 			<input class="coolButtons col-12 ml-auto" type="button" style="padding-left:0 ; background: dodgerblue"

@@ -74,11 +74,20 @@ class UsersDao
 
     public function delete($username)
     {
+        $sql = "SELECT ID FROM Posts WHERE username = ?";
+        $ids = $this->dbConnection->fetchAll($sql,array($username));
+
         $sql = "DELETE FROM Users WHERE username = ?";
         $this->dbConnection->execute($sql, array($username));
 
         $sql = "DELETE FROM Posts WHERE username = ?";
         $this->dbConnection->execute($sql,array($username));
+
+        $sql = "DELETE FROM Imagenes WHERE ID = ?";
+        for($x = 0; $x < count($ids);$x++)
+        {
+            $this->dbConnection->execute($sql,array($ids[$x]->ID));
+        }
     }
 
     public function generateToken($username)

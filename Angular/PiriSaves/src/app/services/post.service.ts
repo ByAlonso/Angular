@@ -38,4 +38,8 @@ export class PostService {
 	delete(id: number) {
 		return this.http.delete('http://localhost:80/profile/' + id);
 	}
+
+	getPhotos(id :number){
+		return this.http.get<String[]>('http://localhost:80/getPhotos/' + id);
+	}
 }

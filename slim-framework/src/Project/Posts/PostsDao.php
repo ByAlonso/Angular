@@ -46,9 +46,14 @@ class PostsDao
 
     public function getByClass($classe)
     {
-        $sql = "SELECT * FROM Posts p, Imagenes i WHERE p.class = ? and 
-        p.ID = i.ID ORDER BY p.ID DESC";
+        $sql = "SELECT * FROM Posts WHERE class = ? ORDER BY ID DESC";
         return $this->dbConnection->fetchAll($sql, array($classe));
+    }
+
+    public function getPhotosById($id)
+    {
+        $sql = "SELECT * FROM Imagenes WHERE ID = ?";
+        return $this->dbConnection->fetchAll($sql, array($id));
     }
 
     public function createPost($post)
